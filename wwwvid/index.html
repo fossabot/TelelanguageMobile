@@ -1,0 +1,415 @@
+<html>
+<head>
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="css/toastr.min.css">
+
+</head>
+<body>
+	<div class="hide">
+		<video class="hide" id="siplocalaudio"
+			style="display: none; z-index: -20;" autoplay muted="muted" />
+		<video class="hide" id="sipremoteaudio"
+			style="display: none; z-index: -20;" autoplay />
+	</div>
+	<div id="internetconnectingpage">
+		<div class="video-container-div">
+			<div class="sk-cube-grid">
+		        <div class="sk-cube sk-cube1"></div>
+		        <div class="sk-cube sk-cube2"></div>
+		        <div class="sk-cube sk-cube3"></div>
+		        <div class="sk-cube sk-cube4"></div>
+		        <div class="sk-cube sk-cube5"></div>
+		        <div class="sk-cube sk-cube6"></div>
+		        <div class="sk-cube sk-cube7"></div>
+		        <div class="sk-cube sk-cube8"></div>
+		        <div class="sk-cube sk-cube9"></div>
+		    </div>
+			<span style="z-index: 2;">Connecting to the<br>network . . .</span>
+		</div>
+	</div>
+	<div id="disconnectingpage" class="hide">
+		<div class="video-container-div">
+			<span style="z-index: 2;">Disconnecting<br>Call . . .</span>
+		</div>
+	</div>
+	<div id="loginpage" class="hide">
+		<div class="header">
+			<img src="img/telelanguagevriheader.png" />
+		</div>
+		<div class="topbar">Video Interpretation</div>
+		<div id="content" class="content">
+		    <div id="marketingtext" class="marketingtext">
+		    </div>
+			<div class="loginform">
+				<div class="email">
+				    <img src="img/usersquare.png"/>
+				    <div class="loginforminputdiv">
+						<input id="loginusername" type="email" placeholder="Email">
+					</div>
+				</div>
+				<div class="password">
+					<img src="img/locksquare.png"/>
+					<div class="loginforminputdiv">
+						<input id="loginpassword" type="password" placeholder="Password">
+					</div>
+				</div>
+				<div class="remember">
+					<div class="rememberme"><i id="remembercheckbox" class="fa fa-check-square"></i> Remember Me</div>
+					<div class="forgot">Forgot Password?</div>
+				</div>
+				<div id="loginbutton" class="loginbutton">Login</div>
+			</div>
+		</div>
+		<div class="bottombar">
+			<div id="alreadycustomer" class="already">Already A Customer</div>
+			<div id="openaccount" class="openacount">Open An Account</div>
+		</div>
+	</div>
+	<div id="getinterpreterpage" class="hide">
+		<div class="header">
+			<img src="img/telelanguagevriheader.png" />
+		</div>
+		<div class="topbar">Video Interpretation</div>
+		<div id="getinterpretercontent" class="getinterpretercontent">
+		    <div class="getinterpreterform">
+		    	<img src="img/getaninterpreternow.png"/>
+		    	<div id="questions" class="leftcolumn">
+					<div class="lanugageline">
+						<select id="languageselect">
+<option>Select Language</option>
+<option>Spanish</option>
+<option>Vietnamese</option>
+<option>Arabic</option>
+<option>Chinese</option>
+<option>Russian</option>
+<option>Aderi [Ethiopian]</option>
+<option>Afghan Farsi</option>
+<option>African Creole</option>
+<option>Afrikaans</option>
+<option>Akan</option>
+<option>Akateko</option>
+<option>Albanian</option>
+<option>Amharic</option>
+<option>Arabic</option>
+<option>arabic juba</option>
+<option>Armenian</option>
+<option>Ashanh</option>
+<option value="Sign">ASL</option>
+<option>Assyrian</option>
+<option>Azeri (Turkish)</option>
+<option>Badini</option>
+<option>Bajuni</option>
+<option>Balochi</option>
+<option>Bambara</option>
+<option>Bangangte</option>
+<option>Bantu</option>
+<option>Basque</option>
+<option>Bassa</option>
+<option>Belin/Blin</option>
+<option>Bengali/Bangla</option>
+<option>Berber</option>
+<option>Bhutanese</option>
+<option>Bosnian</option>
+<option>Brazilian Portuguese</option>
+<option>Bulgarian</option>
+<option>Burmese</option>
+<option>Buryat</option>
+<option>Cambodian</option>
+<option>Cantonese</option>
+<option>Cape Verdean</option>
+<option>Carolinean</option>
+<option>Cebuano</option>
+<option>Chaldean</option>
+<option>Chinese Hakka</option>
+<option>Chinese Shanghaiese</option>
+<option>Chinese Sichuan</option>
+<option>Chinese Taiwanese</option>
+<option>Chinese Toisanese</option>
+<option>Chinn</option>
+<option>Chiu-Chow</option>
+<option>Choujo</option>
+<option>Chuj</option>
+<option>Chuukese</option>
+<option>Cree</option>
+<option>Croatian</option>
+<option>Cupik</option>
+<option>Czech</option>
+<option>Danish</option>
+<option>Dari</option>
+<option>Daula Fanti</option>
+<option>Dinka</option>
+<option>Dutch</option>
+<option>Dyula</option>
+<option>Dzongkha</option>
+<option>Estonian</option>
+<option>European Portuguese</option>
+<option>Ewe</option>
+<option>Falam</option>
+<option>Fanti</option>
+<option>Farsi</option>
+<option>Fijian</option>
+<option>Finnish</option>
+<option>Flemish</option>
+<option>French</option>
+<option>French Canadian</option>
+<option>French Creole</option>
+<option>Fukienese (Chinese)</option>
+<option>Fulani</option>
+<option>Fuqing</option>
+<option>Fuzhou</option>
+<option>Ga</option>
+<option>Georgian</option>
+<option>German</option>
+<option>Gheg</option>
+<option>Grebo</option>
+<option>Greek</option>
+<option>Guarani</option>
+<option>Gujarati</option>
+<option>Haitian Creole</option>
+<option>Hakka Chinn</option>
+<option>Hausa</option>
+<option>Hebrew</option>
+<option>Hindi</option>
+<option>Hmong</option>
+<option>Hokkien</option>
+<option>Hunan</option>
+<option>Hungarian</option>
+<option>Ibo</option>
+<option>Icelandic</option>
+<option>Ife</option>
+<option>Igbo</option>
+<option>Ilocano (Filipino)</option>
+<option>Indonesian</option>
+<option>Iranian Farsi</option>
+<option>Italian</option>
+<option>Japanese</option>
+<option>Jarai</option>
+<option>Jawi</option>
+<option>Jola</option>
+<option>Kabye</option>
+<option>Kachin</option>
+<option>Kanjobal</option>
+<option>Kanjoval [Myan]</option>
+<option>Kannada</option>
+<option>Kaqchikel</option>
+<option>Karen</option>
+<option>Karenni</option>
+<option>Kashmiri</option>
+<option>Kaya</option>
+<option>Kazak</option>
+<option>Kikuyu</option>
+<option>Kinyamulenge</option>
+<option>Kinyarwanda</option>
+<option>Kirundi</option>
+<option>Kissi</option>
+<option>Kongo</option>
+<option>Korean</option>
+<option>Krahn</option>
+<option>Krio</option>
+<option>Kru</option>
+<option>Kunama</option>
+<option>Kurdish</option>
+<option>Kurmanji (Kurdish)</option>
+<option>Lahu</option>
+<option>Lakota</option>
+<option>Lao</option>
+<option>Latvian</option>
+<option>Liberian</option>
+<option>Lingala</option>
+<option>Lithuanian</option>
+<option>Luganda</option>
+<option>Luo</option>
+<option>Macedonian</option>
+<option>Malayalam</option>
+<option>Malaysian</option>
+<option>Malinke</option>
+<option>Maltese</option>
+<option>Mam [Myam]</option>
+<option>Mandarin</option>
+<option>Mandingo</option>
+<option>Mandinka</option>
+<option>Marathi (Indian)</option>
+<option>Marshallese</option>
+<option>Masalit</option>
+<option>Mashi</option>
+<option>May May</option>
+<option>Mende</option>
+<option>Micronesian Kosrae</option>
+<option>Micronesian Pingelapese</option>
+<option>Micronesian Pohnpei</option>
+<option>Mien</option>
+<option>Mina (Togolese)</option>
+<option>Mirpuri</option>
+<option>Mixteco Alto</option>
+<option>Mixteco Bajo</option>
+<option>Mizo</option>
+<option>Moldovan</option>
+<option>Mon</option>
+<option>Mongolian</option>
+<option>Moore</option>
+<option>Moreh</option>
+<option>Moroccan Arabic</option>
+<option>Mortlockese</option>
+<option>Navajo Indian</option>
+<option>Ndebele</option>
+<option>Nepali</option>
+<option>Nigerian Pidgeon</option>
+<option>Norwegian</option>
+<option>Nuer</option>
+<option>Oriya</option>
+<option>Oromo</option>
+<option>Other</option>
+<option>Palau</option>
+<option>Pampango</option>
+<option>Pangasina (Filipino)</option>
+<option>Pashtu</option>
+<option>Pokomchi</option>
+<option>Polish</option>
+<option>Popti</option>
+<option>Portuguese</option>
+<option>Portuguese Creole</option>
+<option>Pothwari</option>
+<option>Pulaar</option>
+<option>Punjabi</option>
+<option>Qeqchi</option>
+<option>Quiche</option>
+<option>Rohingya</option>
+<option>Romanian</option>
+<option>Russian</option>
+<option>Samoan</option>
+<option>Sango</option>
+<option>Serbian</option>
+<option>Sesotho</option>
+<option>Shona</option>
+<option>Sichuomese</option>
+<option>Sicilian</option>
+<option>Sign</option>
+<option>Sindhi</option>
+<option>Sinhalese</option>
+<option>Slovak</option>
+<option>Slovenian</option>
+<option>Somali</option>
+<option>Soninke</option>
+<option>Sorani</option>
+<option>Sosso</option>
+<option>Spanish</option>
+<option>Sudanese Arabic</option>
+<option>Swahili</option>
+<option>Swedish</option>
+<option>Sylheti</option>
+<option>Tagalog</option>
+<option>Taiwanese</option>
+<option>Tajik</option>
+<option>Tamil</option>
+<option>Tatar</option>
+<option>Telugu</option>
+<option>Temne</option>
+<option>Tetum</option>
+<option>Thai</option>
+<option>Tibetan</option>
+<option>Tidem Chinn</option>
+<option>Tigre</option>
+<option>Tigrinya</option>
+<option>Tongan</option>
+<option>Trique</option>
+<option>Tshiluba</option>
+<option>Turkish</option>
+<option>Turkmen</option>
+<option>Twi</option>
+<option>Ukrainian</option>
+<option>Urdu</option>
+<option>Uspanteko</option>
+<option>Uzbek</option>
+<option>Vietnamese</option>
+<option>Visayan (Filipino)</option>
+<option>Welsh</option>
+<option>Wolof</option>
+<option>Yiddish</option>
+<option>Yoruba</option>
+<option>Yupik</option>
+<option>Zapotec</option>
+<option>Zomi</option>
+<option>Zulu</option>
+						</select>
+					</div>
+					<div class="genderline">
+						<select id="genderselect">
+							<option>Any Gender</option><option>Male Interpreter</option><option>Female Interpreter</option>
+						</select>
+					</div>
+					<div class="question">
+						<input type="text" placeholder="Name">
+					</div>
+					<div class="question">
+						<input type="text" placeholder="Location">
+					</div>
+					<div class="question">
+						<input type="text" placeholder="Customer Code">
+					</div>
+					<div class="question">
+						<input type="text" placeholder="Professional Skills Needed">
+					</div>
+				</div>
+				<div class="rightcolumn">
+					<div id="videobutton" class="videobutton"><i class="fa fa-video-camera fa-2x"></i></div>
+					<div id="phonebutton" class="phonebutton"><i class="fa fa-phone fa-2x"></i></div>
+				</div>	    	
+			</div>
+		</div>
+		<div class="bottombar">
+			<div id="preschedule" class="already">Pre Schedule an Interpreter</div>
+			<div id="logout" class="openacount">Log Out</div>
+		</div>
+	</div>
+	<div id="connectingpage" class="video-container hide">
+		<div class="video-container-div">
+			<img style="width: 100%;" src="img/boxlogoonly.png"/><br/>
+			<span id="connectingtospan">You're Being Connected<br/>To A Spanish Interpreter</span>
+		</div>
+	</div>
+	<div id="interpreterpage" class="video-container hide">
+		<img src="img/overthephoneinterpreter.png"/>
+	</div>
+	<div id="agentpage" class="video-container hide">
+		<img src="img/agentassistance.png"/>
+		<div id="callcontrolbuttons">
+			<div class="left"><img id="micbutton" src="img/micsquare.png"/><br/><span id="miclabel">Mute</</span></div>
+			<div class="helper"></div>
+			<div class="center"><img id="videocontrolbutton" src="img/videosquare.png"/><span id="videolabel">Hide</</span></div>
+			<div class="right"><img id="hangupbutton" src="img/hangupsquare.png"/><span>Hangup</</span></div>
+		</div>
+	</div>
+	<div id="onholdpage" class="video-container hide">
+		<img src="img/onhold.png"/>
+	</div>
+	<div id="videopage" class="video-container hide">
+		<video playsinline class="videointerpreter" id="videointerpreter" style="z-index: -3; object-fit: fill;" muted="muted" autoplay></video>
+		<video playsinline class="rounded centered" id="videocustomer" style="z-index: -3; position:absolute; top: 20px; right: 20px;" width="20%" height="20%" autoplay muted="muted"></video>
+		<img class="bottom-left hide" id="swapcamerabutton" src="img/swapcamera.png"/>
+	</div>
+	<script type="text/javascript" src="adapter.min.js"></script>
+	<script type="text/javascript" src="js/janus.js"></script>
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" language="javascript">
+		function registerGlobals(turnServer, turnUsername, turnPassword) {
+			if (typeof(window.device) != "undefined" && typeof(window.device.platform) != "undefined" && window.device.platform === 'iOS') {
+				var pc = new cordova.plugins.iosrtc.RTCPeerConnection({
+				  iceServers: [{url: turnServer,
+						credential: turnPassword,
+						username: turnUsername
+					}]
+				});
+			    cordova.plugins.iosrtc.registerGlobals();
+			    cordova.plugins.audioroute.overrideOutput('speaker');
+			    window.shouldRotateToOrientation = function(degrees) {
+			    	 return true;
+			    }
+			}
+		}
+	</script>
+	<script type="text/javascript" language="javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" language="javascript" src="js/toastr.min.js"></script>
+	<script type="text/javascript" language="javascript" src="base/base.nocache.js"></script>
+</body>
+</html>

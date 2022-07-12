@@ -1,0 +1,134 @@
+video::-webkit-media-controls {
+    display: none !important;
+}
+video::-webkit-media-controls-start-playback-button {
+    display: none !important;
+}
+
+body {
+  background: #372940;
+}
+
+.demo {
+  position: relative;
+  margin: 50px auto;
+  width: 150px;
+}
+
+.videoHolder {
+    width: 100%;
+    height: 100%;
+    background-color:#00b140;
+    display:inline-block;
+    float:left;
+    position:relative;
+}
+.videoHolderVideo {
+    max-width: 100%;
+    max-height:100%;
+    margin: auto;
+    margin-top: 44px;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}
+
+.loader {
+  position: absolute;
+  opacity: .7;
+}
+
+.loader circle {
+  -webkit-animation: draw 4s infinite ease-in-out;
+          animation: draw 4s infinite ease-in-out;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.loader-2 circle,
+.loader-6 circle {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.loader-7 circle {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+.loader-4 circle,
+.loader-8 circle {
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+.loader-3 {
+  left: -150px;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.loader-6,
+.loader-7,
+.loader-8 {
+  left: -150px;
+  -webkit-transform: rotateX(180deg) rotateY(180deg);
+          transform: rotateX(180deg) rotateY(180deg);
+}
+
+.loader-5 circle {
+  opacity: .2;
+}
+
+@-webkit-keyframes draw {
+  50% {
+    stroke-dashoffset: 0;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+}
+
+@keyframes draw {
+  50% {
+    stroke-dashoffset: 0;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+}
+
+/*make sure the viewport is 100% height*/
+html, body {
+    height : 100%;
+}
+
+/*make the page element 100% height*/
+#call-page {
+    height : 100%;
+}
+
+/*specify a height for the header so we can line-up the elements, the default is 40px*/
+#call-page .ui-header {
+    height : 40px;
+}
+
+/*set the content to be full-width and height except it doesn't overlap the header or footer*/
+#call-page .ui-content {
+    position : absolute;
+    top      : 40px;
+    right    : 0;
+    bottom   : 30px;
+    left     : 0;
+}
+
+/*absolutely position the footer to the bottom of the page*/
+#call-page .ui-footer {
+    position : absolute;
+    bottom   : 0;
+    left     : 0;
+    width    : 100%;
+    height   : 30px;
+}​

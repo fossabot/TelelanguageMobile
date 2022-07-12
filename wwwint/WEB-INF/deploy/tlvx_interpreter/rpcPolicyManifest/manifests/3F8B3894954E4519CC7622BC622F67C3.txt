@@ -1,0 +1,2 @@
+serviceClass: com.telelanguage.interpreter.client.InterpreterService
+path: 55CBE1E0A2F983FD874E6051252DA946.gwt.rpc

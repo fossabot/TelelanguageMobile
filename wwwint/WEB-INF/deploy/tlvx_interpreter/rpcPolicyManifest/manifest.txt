@@ -1,0 +1,3 @@
+# Module tlvx_interpreter
+# RPC service class, partial path of RPC policy file
+com.telelanguage.interpreter.client.InterpreterService, 55CBE1E0A2F983FD874E6051252DA946.gwt.rpc

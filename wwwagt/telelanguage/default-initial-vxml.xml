@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml xmlns="http://www.w3.org/2001/vxml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.w3.org/2001/vxml http://www.w3.org/TR/voicexml20/vxml.xsd" version="2.0">
+    <form id="initial">
+        <field type="digits">
+            <prompt timeout="0s" bargein="false">
+                <audio src="prompts/default-initial.wav">
+                    Please wait while your call is connected.
+                </audio>
+            </prompt>
+        	<noinput>
+	            <goto next="#initial"/>
+        	</noinput>
+        	<nomatch>
+	            <goto next="#initial"/>
+        	</nomatch>
+        	<filled>
+	            <goto next="#initial"/>
+        	</filled>
+        </field>
+    </form>
+</vxml>

@@ -1,0 +1,57 @@
+<vxml xmlns="http://www.w3.org/2001/vxml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.w3.org/2001/vxml http://www.w3.org/TR/voicexml20/vxml.xsd" version="2.0">
+    <var name="conferenceNumber"/>
+    <var name="failures" expr="0"/>
+    <var name="sipProxy" expr="'192.168.1.100:5080'"/>
+    <form>
+        <!--TODO: update max for international support? -->
+        <field name="conferenceNumber" type="digits?minlength=10;maxlength=10">
+            <prompt count="1">
+                Please say or enter the number you want to conference.
+            </prompt>
+            <prompt count="2">
+                I need you to say or enter the number you want to conference.  You can also so return to conference or
+                hit the pound key to return.
+            </prompt>
+            <help>
+                I need you to say or enter the number you want to conference.  You can also so return to conference or
+                hit the pound key to return.
+            </help>
+            <noinput>
+                <prompt>
+                    Sorry, I did not hear anything.
+                </prompt>
+                <assign name="failures" expr="failures + 1"/>
+                <if cond="failures >= 3">
+                    <prompt>
+                        Returning you to the conference
+                    </prompt>
+                    <exit/>
+                <else/>
+                    <reprompt/>
+                </if>
+            </noinput>
+            <nomatch>
+                <prompt>
+                    Sorry, I did not understand.
+                </prompt>
+                <assign name="failures" expr="failures + 1"/>
+                <if cond="failures >= 3">
+                    <prompt>
+                        Returning you to the conference.
+                    </prompt>
+                    <exit/>
+                <else/>
+                    <reprompt/>
+                </if>
+            </nomatch>
+            <filled>
+                <prompt>
+                    Your call will be connected to the conference shortly.  You are now being returned to the conference.
+                </prompt>
+                <goto nextitem="xfer"/>
+            </filled>
+        </field>
+        <transfer name="xfer" bridge="false" destexpr="'sip:' + conferenceNumber + '@' + sipProxy"/>
+    </form>
+</vxml>

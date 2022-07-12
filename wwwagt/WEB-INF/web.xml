@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+
+  <context-param>
+    <param-name>log4jConfigLocation</param-name>
+    <param-value>/WEB-INF/classes/log4j.properties</param-value>
+  </context-param>
+
+  <listener> 
+    <listener-class>com.telelanguage.tlvx.server.AgentServiceImpl</listener-class> 
+  </listener> 
+  
+  <listener>
+    <listener-class>com.icoa.voice.api.voxeo.VoxeoService</listener-class>
+  </listener>
+  
+  	<filter>
+		<filter-name>gwtCacheControlFilter</filter-name>
+		<filter-class>com.telelanguage.tlvx.server.GWTCacheControlFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>gwtCacheControlFilter</filter-name>
+		<url-pattern>/tlvx/tlvx.nocache.js</url-pattern>
+	</filter-mapping>
+  
+  <filter>
+    <filter-name>TLVXManager</filter-name>
+    <filter-class>com.telelanguage.tlvx.service.TLVXManager</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>TLVXManager</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <servlet>
+    <servlet-name>agentServlet</servlet-name>
+    <servlet-class>com.telelanguage.tlvx.server.AgentServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>ccxmlServlet</servlet-name>
+    <servlet-class>com.icoa.voice.api.voxeo.VoxeoService</servlet-class>
+    <init-param>
+      <param-name>VoiceApplication</param-name>
+      <param-value>com.telelanguage.tlvx.ivr.TLVX</param-value>
+    </init-param>
+  </servlet>
+  
+	<servlet>
+		<servlet-name>jersey-serlvet</servlet-name>
+		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+		<init-param>
+		     <param-name>jersey.config.server.provider.packages</param-name>
+		     <param-value>com.telelanguage</param-value>
+		</init-param>
+		<!-- 
+		<init-param>
+		    <param-name>jersey.config.server.provider.classnames</param-name>
+		    <param-value>org.glassfish.jersey.filter.LoggingFilter</param-value>
+		</init-param>
+		 -->
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>jersey-serlvet</servlet-name>
+		<url-pattern>/api/*</url-pattern>
+	</servlet-mapping>
+  
+  <servlet>
+    <servlet-name>health</servlet-name>
+    <servlet-class>com.telelanguage.tlvx.server.HealthServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>health</servlet-name>
+    <url-pattern>/health</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>agentServlet</servlet-name>
+    <url-pattern>/tlvx/agent</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>ccxmlServlet</servlet-name>
+    <url-pattern>/ccxml/event</url-pattern>
+  </servlet-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>tlvx.html</welcome-file>
+  </welcome-file-list>
+
+</web-app>

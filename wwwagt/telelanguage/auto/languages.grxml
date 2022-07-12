@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="iso-8859-1"?> 
+<grammar xmlns="http://www.w3.org/2001/06/grammar" xml:lang="en-US" root="r2">
+  <rule id="r2" scope="public">
+     <one-of>
+        <item> Albanian <tag> <![CDATA[  <language "Albanian"><wavefilename "Albanian"> ]]>  </tag> </item>
+        <item> Albayneean <tag> <![CDATA[  <language "Albanian"><wavefilename "Albanian"> ]]>  </tag> </item>
+        <item> Arabic <tag> <![CDATA[  <language "Arabic"><wavefilename "Arabic"> ]]>  </tag> </item>
+        <item> Ahrmeenian <tag> <![CDATA[  <language "Armenian"><wavefilename "Armenian"> ]]>  </tag> </item>
+        <item> Armenian <tag> <![CDATA[  <language "Armenian"><wavefilename "Armenian"> ]]>  </tag> </item>
+        <item> Assyrian <tag> <![CDATA[  <language "Assyrian"><wavefilename "Assyrian"> ]]>  </tag> </item>
+        <item> Burmese <tag> <![CDATA[  <language "Burmese"><wavefilename "Burmese"> ]]>  </tag> </item>
+        <item> Buhrmese <tag> <![CDATA[  <language "Burmese"><wavefilename "Burmese"> ]]>  </tag> </item>
+        <item> Behrmese <tag> <![CDATA[  <language "Burmese"><wavefilename "Burmese"> ]]>  </tag> </item>
+        <item> Bengali <tag> <![CDATA[  <language "Bengali"><wavefilename "Bengali"> ]]>  </tag> </item>
+        <item> Behngahlee <tag> <![CDATA[  <language "Bengali"><wavefilename "Bengali"> ]]>  </tag> </item>
+        <item> Bosnian <tag> <![CDATA[  <language "Croatian"><wavefilename "Bosnian"> ]]>  </tag> </item>
+        <item> Bulgarian <tag> <![CDATA[  <language "Bulgarian"><wavefilename "Bulgarian"> ]]>  </tag> </item>
+        <item> Cambodian <tag> <![CDATA[  <language "Cambodian"><wavefilename "Cambodian"> ]]>  </tag> </item>
+        <item> Creole <tag> <![CDATA[  <language "French Creole"><wavefilename "FrenchCreole"> ]]>  </tag> </item>
+        <item> Cantonese <tag> <![CDATA[  <language "Cantonese"><wavefilename "ChineseCantonese"> ]]>  </tag> </item>
+        <item> Chinese <tag> <![CDATA[  <language "Chinese"><wavefilename "Chinese"> ]]>  </tag> </item>
+        <item> Farsi <tag> <![CDATA[  <language "Farsi"><wavefilename "Farsi"> ]]>  </tag> </item>
+        <item> French <tag> <![CDATA[  <language "French"><wavefilename "French"> ]]>  </tag> </item>
+        <item> French Canadian<tag> <![CDATA[  <language "French Canadian"><wavefilename "FrenchCanadian"> ]]>  </tag> </item>
+        <item> Kahren <tag> <![CDATA[  <language "Karen"><wavefilename "Karen"> ]]>  </tag> </item>
+        <item> Karen <tag> <![CDATA[  <language "Karen"><wavefilename "Karen"> ]]>  </tag> </item>
+        <item> Kirundi <tag> <![CDATA[  <language "Kirundi"><wavefilename "Kirundi"> ]]>  </tag> </item>
+        <item> Korean <tag> <![CDATA[  <language "Korean"><wavefilename "Korean"> ]]>  </tag> </item>
+        <item> German <tag> <![CDATA[  <language "German"><wavefilename "German"> ]]>  </tag> </item>
+        <item> Gujarati <tag> <![CDATA[  <language "Gujarati"><wavefilename "Gujarati"> ]]>  </tag> </item>
+        <item> Greek <tag> <![CDATA[  <language "Greek"><wavefilename "Greek"> ]]>  </tag> </item>
+        <item> Hindi <tag> <![CDATA[  <language "Hindi"><wavefilename "Hindi"> ]]>  </tag> </item>
+        <item> Hindee <tag> <![CDATA[  <language "Hindi"><wavefilename "Hindi"> ]]>  </tag> </item>
+        <item> Hmong <tag> <![CDATA[  <language "Hmong"><wavefilename "Hmong"> ]]>  </tag> </item>
+        <item> Mong <tag> <![CDATA[  <language "Hmong"><wavefilename "Hmong"> ]]>  </tag> </item>
+        <item> Mohng <tag> <![CDATA[  <language "Hmong"><wavefilename "Hmong"> ]]>  </tag> </item>
+        <item> Portuguese <tag> <![CDATA[  <language "Portuguese"><wavefilename "Portuguese"> ]]>  </tag> </item>
+        <item> Punjabi <tag> <![CDATA[  <language "Punjabi"><wavefilename "Punjabi"> ]]>  </tag> </item>
+        <item> Italian <tag> <![CDATA[  <language "Italian"><wavefilename "Italian"> ]]>  </tag> </item>
+        <item> Japanese <tag> <![CDATA[  <language "Japanese"><wavefilename "Japanese"> ]]>  </tag> </item>
+        <item> Lao <tag> <![CDATA[  <language "Lao"><wavefilename "Lao"> ]]>  </tag> </item>
+        <item> Lahw <tag> <![CDATA[  <language "Lao"><wavefilename "Lao"> ]]>  </tag> </item>
+        <item> Lithuanian <tag> <![CDATA[  <language "Lithuanian"><wavefilename "Lithuanian"> ]]>  </tag> </item>
+        <item> Mandarin <tag> <![CDATA[  <language "Mandarin"><wavefilename "ChineseMandarin"> ]]>  </tag> </item>
+        <item> Malayalam <tag> <![CDATA[  <language "Malayalam"><wavefilename "Malayalam"> ]]>  </tag> </item>
+        <item> Nepali <tag> <![CDATA[  <language "Nepali"><wavefilename "Nepali"> ]]>  </tag> </item>
+        <item> Polish <tag> <![CDATA[  <language "Polish"><wavefilename "Polish"> ]]>  </tag> </item>
+        <item> Russian <tag> <![CDATA[  <language "Russian"><wavefilename "Russian"> ]]>  </tag> </item>
+        <item> Spanish <tag> <![CDATA[  <language "Spanish"><wavefilename "Spanish"> ]]>  </tag> </item>
+        <item> Somali <tag> <![CDATA[  <language "Somali"><wavefilename "Somali"> ]]>  </tag> </item>
+        <item> Some-ahlee <tag> <![CDATA[  <language "Somali"><wavefilename "Somali"> ]]>  </tag> </item>
+        <item> Swahili <tag> <![CDATA[  <language "Swahili"><wavefilename "Swahili"> ]]>  </tag> </item>
+        <item> Swaheelee <tag> <![CDATA[  <language "Swahili"><wavefilename "Swahili"> ]]>  </tag> </item>
+        <item> Tagalog <tag> <![CDATA[  <language "Tagalog"><wavefilename "Tagalog"> ]]>  </tag> </item>
+        <item> Tagihlog <tag> <![CDATA[  <language "Tagalog"><wavefilename "Tagalog"> ]]>  </tag> </item>
+        <item> Tahgawlig <tag> <![CDATA[  <language "Tagalog"><wavefilename "Tagalog"> ]]>  </tag> </item>
+        <item> Tahgahleg <tag> <![CDATA[  <language "Tagalog"><wavefilename "Tagalog"> ]]>  </tag> </item>
+        <item> Taiwanese <tag> <![CDATA[  <language "Taiwanese"><wavefilename "Taiwanese"> ]]>  </tag> </item>
+        <item> Ukraynian <tag> <![CDATA[  <language "Ukrainian"><wavefilename "Ukrainian"> ]]>  </tag> </item>
+        <item> Ukranian <tag> <![CDATA[  <language "Ukrainian"><wavefilename "Ukranian"> ]]>  </tag> </item>
+        <item> Urdu <tag> <![CDATA[  <language "Urdu"><wavefilename "Urdu"> ]]>  </tag> </item>
+        <item> Vietnamese <tag> <![CDATA[  <language "Vietnamese"><wavefilename "Vietnamese"> ]]>  </tag> </item>
+        <item> Vee-eht nahmeez <tag> <![CDATA[  <language "Vietnamese"><wavefilename "Vietnamese"> ]]>  </tag> </item>
+     </one-of>
+  </rule>
+</grammar>

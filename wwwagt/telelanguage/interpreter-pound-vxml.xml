@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml xmlns="http://www.w3.org/2001/vxml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.w3.org/2001/vxml http://www.w3.org/TR/voicexml20/vxml.xsd" version="2.0">
+    <var name="failures" expr="0"/>
+    <form id="interpreter_pound">
+        <field name="menu_choice" slot="choice">
+            <prompt bargein="true" bargeintype="hotword" timeout="8s">
+                Interpreter menu.  Press 1 to dial a third party number, 
+                press 2 to hang up the currently connected third party,
+                press 3 to connect to an agent for assistance,
+                press 4 to return to the customer
+            </prompt>
+            <grammar type="text/gsl">
+  <![CDATA[[
+    [(dtmf-1)] {<choice "one">}
+    [(dtmf-2) ] {<choice "two">}
+    [(dtmf-3) ] {<choice "three">}
+    [(dtmf-4) ] {<choice "four">}
+   ]
+  ]]>
+  			</grammar>
+        	<noinput>
+        		<assign name="failures" expr="failures + 1"/>
+        		<if cond="failures >= 2">
+        		    <prompt>Connecting you to an agent.</prompt>
+	            	<assign name="action" expr="'agent'"/>
+	            	<assign name="dialogreason" expr="'no input'"/>
+                    <exit namelist="action dialogreason"/>
+                <else/>
+                    <reprompt/>
+                </if>
+        	</noinput>
+        	<nomatch>
+        		<assign name="failures" expr="failures + 1"/>
+        		<if cond="failures >= 2">
+        		    <prompt>Connecting you to an agent.</prompt>
+	            	<assign name="action" expr="'agent'"/>
+	            	<assign name="dialogreason" expr="'no match'"/>
+                    <exit namelist="action dialogreason"/>
+                <else/>
+                    <reprompt/>
+                </if>
+        	</nomatch>
+        	<filled>
+        		<if cond="menu_choice$.interpretation.choice == 'one'">
+	            	<goto next="#getphonenumber"/>
+        		<elseif cond="menu_choice$.interpretation.choice == 'two'" />
+        			<prompt>Hanging up third parties.</prompt>
+	            	<assign name="action" expr="'hangupthirdparty'"/>
+	            	<assign name="dialogreason" expr="'pressed '+menu_choice$.interpretation.choice"/>
+                    <exit namelist="action dialogreason"/>
+        		<elseif cond="menu_choice$.interpretation.choice == 'four'" />
+        			<prompt>Returning to the customer.</prompt>
+	            	<assign name="action" expr="'return'"/>
+	            	<assign name="dialogreason" expr="'pressed '+menu_choice$.interpretation.choice"/>
+                    <exit namelist="action dialogreason"/>
+	            <else />
+	            	<prompt>Connecting you to an agent.</prompt>
+	            	<assign name="action" expr="'agent'"/>
+	            	<assign name="dialogreason" expr="'pressed '+menu_choice$.interpretation.choice"/>
+                    <exit namelist="action dialogreason"/>
+	            </if>
+        	</filled>
+        </field>
+        <error>
+        	<prompt>I'm sorry there was an error getting your selection.  Returning to the customer.</prompt>
+	        <assign name="action" expr="'agent'"/>
+	        <assign name="dialogreason" expr="'error '+_event+' '+_message"/>
+            <exit namelist="action dialogreason"/>
+        </error>
+    </form>
+    <form id="getphonenumber">
+        <field name="phonenumber" type="digits?length=10">
+            <prompt bargein="true" bargeintype="hotword" timeout="20s">
+                Enter the ten digit U S phone number.
+            </prompt>
+        	<noinput>
+	            <assign name="action" expr="'agent'"/>
+	            <assign name="dialogreason" expr="'no input phone number'"/>
+                <exit namelist="action dialogreason"/>
+        	</noinput>
+        	<nomatch>
+	            <assign name="action" expr="'agent'"/>
+	            <assign name="dialogreason" expr="'no match phone number'"/>
+                <exit namelist="action dialogreason"/>
+        	</nomatch>
+        	<filled>
+        	    <prompt>Thank you dialing now.</prompt>
+	            <assign name="action" expr="'dialthirdparty'"/>
+	            <assign name="phonenumber" expr="phonenumber"/>
+                <exit namelist="action phonenumber"/>
+        	</filled>
+        </field>
+        <error>
+        	<prompt>I'm sorry there was an error getting your selection.  Returning to the customer.</prompt>
+	        <assign name="action" expr="'agent'"/>
+	        <assign name="dialogreason" expr="'error '+_event+' '+_message"/>
+            <exit namelist="action dialogreason"/>
+        </error>
+    </form>
+</vxml>

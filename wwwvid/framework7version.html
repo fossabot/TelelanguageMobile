@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>TELELANGAUGE</title>
+
+<link rel="stylesheet" href="css/framework7.ios.min.css">
+<link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+<link rel="stylesheet" href="css/toast.css">
+<link rel="stylesheet" href="css/my-app.css">
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+	<audio id="sounds" audioplay></audio>
+	<div class="statusbar-overlay"></div>
+
+	<div class="panel-overlay"></div>
+
+	<div class="panel panel-left panel-reveal">
+		<div class="content-block">
+			<p><button id="logoutbutton" class="button">Logout</button></p>
+			<p><button id="fullScreenButton" class="button">Full Screen</button></p>
+			<p><button id="clearCache" class="button">Clear Cache</button></p>
+			<p><button id="publishbutton" class="button">Hide My Video</button></p>
+		</div>
+	</div>
+
+	<div class="panel panel-right panel-cover">
+		<div class="content-block">
+			<p>Right panel content goes here</p>
+		</div>
+	</div>
+
+	<div class="views">
+
+		<div class="view view-main">
+
+			<div class="navbar">
+
+				<div data-page="index" class="navbar-inner">
+
+					<div class="center sliding">TELELANGUAGE VIDEO</div>
+					<div class="right">
+						<a href="#" class="link icon-only open-panel"> <i
+							class="icon icon-bars"></i></a>
+					</div>
+				</div>
+
+				<div data-page="myaccount" class="navbar-inner cached">
+					<div class="left sliding">
+						<a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a>
+					</div>
+					<div class="center sliding">Telelanguage Login</div>
+				</div>
+
+				<div data-page="videotest" class="navbar-inner cached">
+					<div class="left sliding">
+						<a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a>
+					</div>
+					<div class="center sliding">Video Test</div>
+				</div>
+
+				<div data-page="callinterpreter" class="navbar-inner cached">
+					<div class="left sliding">
+						<a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a>
+					</div>
+					<div class="center sliding">Call Interpreter</div>
+				</div>
+				
+				<div data-page="call" class="navbar-inner cached">
+					<div class="left sliding">
+						<a href="#" class="back link"> <i class="icon icon-back"></i><span>Hang Up Call</span></a>
+					</div>
+					<div id="callStatus" class="center sliding">In Call</div>
+					<div class="right">
+						<a href="#" class="link icon-only open-panel"> <i
+							class="icon icon-bars"></i></a>
+					</div>
+				</div>
+				
+				<video class="hide" id="siplocalaudio" style="display: none; z-index: -20;" autoplay muted="muted"/>
+    			<video class="hide" id="sipremoteaudio" style="display: none; z-index: -20;" autoplay/>
+			</div>
+
+			<div class="pages navbar-through toolbar-through">
+
+				<div data-page="index" class="page">
+
+					<div class="page-content">
+						<center><p><img height="220" width="200" src="img/telelanguagelogo.png"></p></center>
+						<div class="list-block">
+							<ul>
+								<li id="loginmenu" style="Display: none;"><a href="#myaccount" class="item-link">
+										<div class="item-content">
+											<div class="item-inner">
+												<div class="item-title">Telelanguage Login</div>
+											</div>
+										</div>
+								</a></li>
+								<li id="videotestli"  style="Display: none;"class="disabled"><a href="#videotest" class="item-link">
+										<div class="item-content">
+											<div class="item-inner">
+												<div class="item-title">Video Test</div>
+											</div>
+										</div>
+								</a></li>
+								<li class="item-content" style="Display: none;">
+									<div class="item-inner">
+										<div class="item-title label">Access Code</div>
+										<div class="item-input">
+											<input id="accesscode" type="text" name="username"
+												placeholder="Your Access Code" class="">
+										</div>
+									</div>
+								</li>
+								<li id="languagemenuitem" style="Display: none;">
+									<div class="item-content">
+										<div class="item-inner">
+											<div class="item-title label">Language</div>
+											<div class="item-input">
+												<input id="language" type="text" placeholder="Language">
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div id="require_video_li" class="item-content" style="Display: none;">
+										<div class="item-inner">
+											<div class="item-title label">Video Interpreter</div>
+											<div class="item-input">
+												<label class="label-switch"> <input id="require_video" type="checkbox" checked="checked">
+													<div class="checkbox"></div>
+												</label>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li id="callinterpreterli"  style="Display: none;" class="disabled"><a href="#call" class="item-link">
+										<div class="item-content">
+											<div class="item-inner">
+												<div class="item-title">Call Interpreter</div>
+											</div>
+										</div>
+								</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div data-page="myaccount" class="page cached">
+					<div class="page-content">
+					    <div class="content-block-title">LOGIN</div>
+						<div class="list-block">
+							<ul>
+								<li>
+									<div class="item-content">
+										<div class="item-media">
+											<i class="icon icon-form-name"></i>
+										</div>
+										<div class="item-inner">
+											<div class="item-title label">Email</div>
+											<div class="item-input">
+												<input id="loginusername" type="text" placeholder="Email" />
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item-content">
+										<div class="item-media">
+											<i class="icon icon-form-password"></i>
+										</div>
+										<div class="item-inner">
+											<div class="item-title label">Password</div>
+											<div class="item-input">
+												<input id="loginpassword" type="password" placeholder="Password" />
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="content-block">
+							<div class="row">
+								<input id="loginbutton" type="submit" value="Login"
+									class="button button-big button-fill color-green" />
+							</div>
+						</div>
+						<div class="content-block-title">REGISTER NEW ACCOUNT</div>
+						<div class="list-block">
+							<ul>
+								<!-- 
+								<li>
+									<div class="item-content">
+										<div class="item-media">
+											<i class="icon icon-form-name"></i>
+										</div>
+										<div class="item-inner">
+											<div class="item-title label">Name</div>
+											<div class="item-input">
+												<input type="text" placeholder="Your name" />
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item-content">
+										<div class="item-media">
+											<i class="icon icon-form-email"></i>
+										</div>
+										<div class="item-inner">
+											<div class="item-title label">E-mail</div>
+											<div class="item-input">
+												<input type="email" placeholder="E-mail" />
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item-content">
+										<div class="item-media">
+											<i class="icon icon-form-password"></i>
+										</div>
+										<div class="item-inner">
+											<div class="item-title label">Password</div>
+											<div class="item-input">
+												<input type="password" placeholder="Password" />
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item-content">
+										<div class="item-media">
+											<i class="icon icon-form-password"></i>
+										</div>
+										<div class="item-inner">
+											<div class="item-title label">Verify Password</div>
+											<div class="item-input">
+												<input type="password" placeholder="Verify Password" />
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item-content">
+										<div class="item-media">
+											<i class="icon icon-form-tel"></i>
+										</div>
+										<div class="item-inner">
+											<div class="item-title label">Phone</div>
+											<div class="item-input">
+												<input type="tel" placeholder="Phone" />
+											</div>
+										</div>
+									</div>
+								</li>
+								 -->
+							</ul>
+						</div>
+						<div class="content-block">
+							<div class="row">
+								<input id="registerbutton" type="submit" value="Register"
+									class="button button-big button-fill color-green" />
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div data-page="videotest" class="page cached">
+					<div class="page-content" style="background-color: black;">
+						<div class="content-block" >
+							<div class="panel-heading">
+								<h3 class="panel-title">Video Test <span class="label label-primary hide" id="echotestcurres"></span> <span class="label label-info hide" id="echotestcurbitrate"></span></h3>
+							</div>
+							<div id="echotestvideocalling" class="demo" style="display: none;">
+								<svg class="loader">
+								    <filter id="blur">
+								      <fegaussianblur in="SourceGraphic" stddeviation="2"></fegaussianblur>
+								    </filter>
+								    <circle cx="75" cy="75" r="60" fill="transparent"
+										stroke="#393F61" stroke-width="6" stroke-linecap="round"
+										stroke-dasharray="385" stroke-dashoffset="385"
+										filter="url(#blur)"></circle>
+								  </svg>
+								<svg class="loader loader-2">
+								    <circle cx="75" cy="75" r="60" fill="transparent"
+										stroke="#CF6028" stroke-width="6" stroke-linecap="round"
+										stroke-dasharray="385" stroke-dashoffset="385"
+										filter="url(#blur)"></circle>
+								  </svg>
+								<svg class="loader loader-3">
+								    <circle cx="75" cy="75" r="60" fill="transparent"
+										stroke="#AC1F28" stroke-width="6" stroke-linecap="round"
+										stroke-dasharray="385" stroke-dashoffset="385"
+										filter="url(#blur)"></circle>
+								  </svg>
+								<svg class="loader loader-4">
+								    <circle cx="75" cy="75" r="60" fill="transparent"
+										stroke="#7B579D" stroke-width="6" stroke-linecap="round"
+										stroke-dasharray="385" stroke-dashoffset="385"
+										filter="url(#blur)"></circle>
+								  </svg>
+								<svg class="loader loader-5">
+								    <circle cx="75" cy="75" r="60" fill="transparent"
+										stroke="white" stroke-width="6" stroke-linecap="round"
+										filter="url(#blur)"></circle>
+								  </svg>
+								<svg class="loader loader-6">
+								    <circle cx="75" cy="75" r="60" fill="transparent"
+										stroke="#00DCA3" stroke-width="6" stroke-linecap="round"
+										stroke-dasharray="385" stroke-dashoffset="385"
+										filter="url(#blur)"></circle>
+								  </svg>
+								<svg class="loader loader-7">
+								    <circle cx="75" cy="75" r="60" fill="transparent"
+										stroke="purple" stroke-width="6" stroke-linecap="round"
+										stroke-dasharray="385" stroke-dashoffset="385"
+										filter="url(#blur)"></circle>
+								  </svg>
+								<svg class="loader loader-8">
+								    <circle cx="75" cy="75" r="60" fill="transparent"
+										stroke="#AAEA33" stroke-width="6" stroke-linecap="round"
+										stroke-dasharray="385" stroke-dashoffset="385"
+										filter="url(#blur)"></circle>
+								  </svg>
+							</div>
+							<div style="float:left; width: 100%; height: 100%;">
+								<div id="echotestvideoright" class="centered" style>
+									<video class="rounded centered hide" id="peerechotestvideo" style="float: left;" width="100%" height="100%" autoplay/>
+								</div>
+								<div style="position: absolute; top: 120px; left: 20px; display: none;">
+									<button class="button button-round active"  style="display: none;" autocomplete="off" id="echotesttoggleaudio">Disable audio</button>
+									<button class="button button-round active" autocomplete="off" id="echotesttogglevideo">Disable video</button>
+									<br/> 
+									<div id="echotestbitrate">
+										<button class="button button-round active" autocomplete="off" id="0">No limit</button>
+										<button class="button button-round " autocomplete="off" id="128">Cap to 128kbit</button>
+										<button class="button button-round " autocomplete="off" id="256">Cap to 256kbit</button>
+										<button class="button button-round " autocomplete="off" id="512">Cap to 512kbit</button>
+										<button class="button button-round " autocomplete="off" id="1024">Cap to 1mbit</button>
+										<button class="button button-round " autocomplete="off" id="1500">Cap to 1.5mbit</button>
+										<button class="button button-round " autocomplete="off" id="2000">Cap to 2mbit</button>
+									</div>
+								</div>
+							</div>
+							<div id="echotestvideoleft">
+								<video class="rounded centered" id="myechotestvideo" style="position:absolute; bottom: 20px; right: 20px;" width="20%" height="20%" autoplay muted="muted"/>
+							</div>
+							<input class="form-control hide" style="display: none;" type="text" placeholder="Write a DataChannel message" autocomplete="off" id="echotestdatasend" onkeypress="return checkEnter(event);" disabled></input>
+							<button class="btn btn-default" style="display: none;" autocomplete="off" id="echoteststart">Start</button>
+							<br/>
+
+							<!-- <div id="echotestbitrateset" class="list-block">
+								<ul id="echotestbitrate" class="dropdown-menu" role="menu">
+									<li><a href="#" id="0">No limit</a></li>
+									<li><a href="#" id="128">Cap to 128kbit</a></li>
+									<li><a href="#" id="256">Cap to 256kbit</a></li>
+									<li><a href="#" id="512">Cap to 512kbit</a></li>
+									<li><a href="#" id="1024">Cap to 1mbit</a></li>
+									<li><a href="#" id="1500">Cap to 1.5mbit</a></li>
+									<li><a href="#" id="2000">Cap to 2mbit</a></li>
+								</ul>
+							</div> -->
+							<input class="form-control" style="display: none;" type="text" id="echotestdatarecv" disabled></input>
+						</div>
+					</div>
+				</div>
+
+				<div data-page="callinterpreter" class="page cached">
+					<div class="page-content">
+						<div class="content-block-title">Call Interpreter</div>
+						<div class="list-block">
+							<ul>
+								<li>
+									<div class="item-content">
+										<div class="item-media">
+											<i class="icon icon-form-name"></i>
+										</div>
+										<div class="item-inner">
+											<div class="item-title label">Language</div>
+											<div class="item-input">
+												<input type="text" placeholder="Language" />
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item-content">
+										<div class="item-media">
+											<i class="icon icon-form-toggle"></i>
+										</div>
+										<div class="item-inner">
+											<div class="item-title label">Video Only</div>
+											<div class="item-input">
+												<label class="label-switch"> <input type="checkbox" />
+													<div class="checkbox"></div>
+												</label>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="item-content">
+										<div class="item-media">
+											<i class="icon icon-form-gender"></i>
+										</div>
+										<div class="item-inner">
+											<div class="item-title label">Gender</div>
+											<div class="item-input">
+												<select>
+													<option>Either</option>
+													<option>Male</option>
+													<option>Female</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="content-block">
+							<div class="row">
+								<div class="col-100">
+									<a href="#call" class="button button-big button-fill color-green">
+										<div class="item-content">
+											<div class="item-inner">
+												<div class="item-title">Call</div>
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div data-page="call" class="page cached">
+				    <div class="page-content" style="background-color: black;">
+				       <div id="callcalling" class="demo">
+						  <svg class="loader">
+						    <filter id="blur">
+						      <fegaussianblur in="SourceGraphic" stddeviation="2"></fegaussianblur>
+						    </filter>
+						    <circle cx="75" cy="75" r="60" fill="transparent" stroke="#393F61" stroke-width="6" stroke-linecap="round" stroke-dasharray="385" stroke-dashoffset="385" filter="url(#blur)"></circle>
+						  </svg>
+						  <svg class="loader loader-2">
+						    <circle cx="75" cy="75" r="60" fill="transparent" stroke="#CF6028" stroke-width="6" stroke-linecap="round" stroke-dasharray="385" stroke-dashoffset="385" filter="url(#blur)"></circle>
+						  </svg>
+						  <svg class="loader loader-3">
+						    <circle cx="75" cy="75" r="60" fill="transparent" stroke="#AC1F28" stroke-width="6" stroke-linecap="round" stroke-dasharray="385" stroke-dashoffset="385" filter="url(#blur)"></circle>
+						  </svg>
+						  <svg class="loader loader-4">
+						    <circle cx="75" cy="75" r="60" fill="transparent" stroke="#7B579D" stroke-width="6" stroke-linecap="round" stroke-dasharray="385" stroke-dashoffset="385" filter="url(#blur)"></circle>
+						  </svg>
+						  <svg class="loader loader-5">
+						    <circle cx="75" cy="75" r="60" fill="transparent" stroke="white" stroke-width="6" stroke-linecap="round" filter="url(#blur)"></circle>
+						  </svg>
+						  <svg class="loader loader-6">
+						    <circle cx="75" cy="75" r="60" fill="transparent" stroke="#00DCA3" stroke-width="6" stroke-linecap="round" stroke-dasharray="385" stroke-dashoffset="385" filter="url(#blur)"></circle>
+						  </svg>
+						  <svg class="loader loader-7">
+						    <circle cx="75" cy="75" r="60" fill="transparent" stroke="purple" stroke-width="6" stroke-linecap="round" stroke-dasharray="385" stroke-dashoffset="385" filter="url(#blur)"></circle>
+						  </svg>
+						  <svg class="loader loader-8">
+						    <circle cx="75" cy="75" r="60" fill="transparent" stroke="#AAEA33" stroke-width="6" stroke-linecap="round" stroke-dasharray="385" stroke-dashoffset="385" filter="url(#blur)"></circle>
+						  </svg>
+					    </div>
+				  		<div class="video_contain">
+							<video class="video" id="videointerpreter" style="z-index: -3;" muted="muted" autoplay/>
+						</div>
+						<div id="divcustomer">
+							<video class="rounded centered" id="videocustomer" style="z-index: -3; position:absolute; bottom: 20px; right: 20px;" width="20%" height="20%" autoplay muted="muted"/>
+						</div>
+						<div id="divagent">
+							<video class="rounded centered videoleft" id="videoagent" style="z-index: -3;" autoplay muted="muted"/>
+						</div>
+				    </div>
+				</div>
+				
+				</div>
+			</div>
+
+			<div class="toolbar">
+				<div class="toolbar-inner">
+					<a href="#" class="link">Link 1</a><a href="#" class="link">Link
+						2</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="popup popup-firefox">
+		<div class="content-block">
+			<p>TELELANGUAGE Video requires Firefox</p>
+			<p>
+				<a href="#" class="close-popup">Continue Anyway (not recommended). . .</a>
+			</p>
+			<p><img src="img/firefox-logo.png"/></p>
+			<p>Only firefox has been certified to work reliably with TeleLanguage Video.</p>
+			<p>If you are on Android, visit the store to install firefox, then return to this
+			page.  If you are on a PC or Mac, load or install firefox.  If you need to
+			download and install, visit https://www.mozilla.com/firefox.</p>
+			<p>Thank you for using TeleLanguage Video!</p>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="js/framework7.min.js"></script>
+	<script type="text/javascript" src="js/toast.js"></script>
+	<script type="text/javascript" src="jquery.blockUI.js" ></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/bootbox.min.js"></script>
+	<script type="text/javascript" src="js/spin.min.js"></script>
+	<script type="text/javascript" src="adapter.js"></script>
+	<script type="text/javascript" src="js/janus.js"></script>
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" language="javascript">
+		function registerGlobals(turnServer, turnUsername, turnPassword) {
+			if (typeof(window.device) != "undefined" && typeof(window.device.platform) != "undefined" && window.device.platform === 'iOS') {
+				var pc = new cordova.plugins.iosrtc.RTCPeerConnection({
+				  iceServers: [{url: turnServer,
+						credential: turnPassword,
+						username: turnUsername
+					}]
+				});
+			    cordova.plugins.iosrtc.registerGlobals();
+			    cordova.plugins.audioroute.overrideOutput('speaker');
+			    window.shouldRotateToOrientation = function(degrees) {
+			    	 return true;
+			    }
+			}
+		}
+	</script>
+	<script type="text/javascript" language="javascript" src="tlvx_video/tlvx_video.nocache.js"></script>
+	

@@ -1,0 +1,2 @@
+serviceClass: com.telelanguage.tlvx.client.AgentService
+path: 46035C3FC498E2099514FB578488578D.gwt.rpc

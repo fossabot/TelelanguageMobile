@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?> 
+<grammar xmlns="http://www.w3.org/2001/06/grammar" xml:lang="en-US" root="forgot">
+  <rule id="forgot">
+					<one-of>
+						<item>i forgot</item>
+						<item>i don't know</item>
+						<item>i don't remember</item>
+						<item>i'm not sure</item>
+						<item>i do not know</item>
+						<item>i do not remember</item>
+						<item>i am not sure</item>
+					</one-of>
+				</rule>
+</grammar>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+              http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5"
+         xmlns="http://java.sun.com/xml/ns/javaee">
+
+  <!-- Servlets -->
+  <servlet>
+    <servlet-name>videoServlet</servlet-name>
+    <servlet-class>com.telelanguage.video.server.VideoServiceImpl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>videoServlet</servlet-name>
+    <url-pattern>/tlvx_video/video</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>videoServlet</servlet-name>
+    <url-pattern>/base/video</url-pattern>
+  </servlet-mapping>
+  
+  	<filter>
+		<filter-name>OggFlowManager</filter-name>
+		<filter-class>com.telelanguage.video.service.TLVXManager</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>OggFlowManager</filter-name>
+		<url-pattern>/tlvx_video/video</url-pattern>
+	</filter-mapping>
+  
+  	<filter>
+		<filter-name>gwtCacheControlFilter</filter-name>
+		<filter-class>com.telelanguage.video.server.GWTCacheControlFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>gwtCacheControlFilter</filter-name>
+		<url-pattern>/tlvx_video/tlvx_video.nocache.js</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>gwtCacheControlFilter</filter-name>
+		<url-pattern>/base/base.nocache.js</url-pattern>
+	</filter-mapping>
+	
+  
+  <servlet>
+    <servlet-name>MessageWebSocket</servlet-name>
+    <servlet-class>com.telelanguage.video.server.MessageWebSocket</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MessageWebSocket</servlet-name>
+    <url-pattern>/ws/video</url-pattern>
+  </servlet-mapping>
+  
+  	<servlet>
+		<servlet-name>jersey-serlvet</servlet-name>
+		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+		<init-param>
+		     <param-name>jersey.config.server.provider.packages</param-name>
+		     <param-value>com.telelanguage.videoapi</param-value>
+		</init-param>
+
+		<init-param>
+		    <param-name>jersey.config.server.provider.classnames</param-name>
+		    <param-value>org.glassfish.jersey.filter.LoggingFilter</param-value>
+		</init-param>
+
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>jersey-serlvet</servlet-name>
+		<url-pattern>/api/*</url-pattern>
+	</servlet-mapping>
+  
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+
+</web-app>

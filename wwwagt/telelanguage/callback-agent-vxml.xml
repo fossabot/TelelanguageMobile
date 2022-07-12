@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml xmlns="http://www.w3.org/2001/vxml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.w3.org/2001/vxml http://www.w3.org/TR/voicexml20/vxml.xsd" version="2.0">
+	<var name="validated" expr="true"/>
+	<form id="callback">
+        <field id="callback_field" type="digits?minlength=5;maxlength=5">
+            <prompt timeout="300s" bargein="false">
+            </prompt>
+        	<noinput>
+        		<prompt>No input</prompt>
+	            <goto next="#callback"/>
+        	</noinput>
+        	<nomatch>
+        		<prompt>No input</prompt>
+	            <goto next="#callback"/>
+        	</nomatch>
+        	<filled>
+                <exit namelist="validated"/>
+        	</filled>
+        </field>
+    </form>
+</vxml>

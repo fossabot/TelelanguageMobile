@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link type="text/css" rel="stylesheet" href="tlvx.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/gxt-all.css" />
+    <link rel="stylesheet" type="text/css" href="resources/css/jquery.gritter.css" />
+    <link rel="stylesheet" type="text/css" href="resources/css/metro-bootstrap.css" />
+    <title>TeleLanguage TLVX Interpreter</title>
+    <script type="text/javascript" src="resources/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="resources/js/jquery.gritter.js"></script>
+    <script type="text/javascript" src="adapter.js"></script>
+    <script type="text/javascript" src="js/janus.js"></script>
+    <script type="text/javascript" language="javascript" src="tlvx_interpreter/tlvx_interpreter.nocache.js"></script>
+    <script language='javascript' src='resources/flash/swfobject.js'></script>
+  </head>
+
+  <body>
+    <audio id="sounds"></audio>
+    <iframe src="javascript:''" id="__gwt_historyFrame" tabIndex='-1' style="position:absolute;width:0;height:0;border:0"></iframe>
+    
+    <!-- RECOMMENDED if your web app will not function without JavaScript enabled -->
+    <noscript>
+      <div style="width: 22em; position: absolute; left: 50%; margin-left: -11em; color: red; background-color: white; border: 1px solid red; padding: 4px; font-family: sans-serif">
+        Your web browser must have JavaScript enabled
+        in order for this application to display correctly.
+      </div>
+    </noscript>
+    
+	<div id="wrapper"></div>
+	
+    <center><h5><font color="#999999"><div id="release"/></font></h5></center>
+    <audio class="rounded centered" id="siplocalaudio" width=320 height=240 autoplay muted="muted"/>
+    <audio class="rounded centered hide" id="sipremoteaudio" width=320 height=240 autoplay/>
+  </body>
+</html>

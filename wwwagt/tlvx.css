@@ -1,0 +1,645 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+table {
+    width: 100%;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+:focus {
+	outline: 0;
+}
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.validicon {
+	color: black;
+	width: 25px;
+	height: 25px;
+}
+body {
+	font: 12px/18px Arial, Tahoma, Verdana, sans-serif;
+    background: #FFFFFF;
+    color: #8e8e8e;
+ 
+    }
+a {
+	color: #fbfafa;
+	outline: none;
+	text-decoration: underline;
+}
+a:hover {
+	text-decoration: none;
+}
+p {
+	margin: 0 0 18px
+}
+img {
+	border: none;
+}
+input, select {
+	vertical-align: middle;
+    border: 1px solid #9b9b9b;
+    -webkit-box-shadow: inset 0px 1px 1px 1px #e3e3e3;
+    box-shadow: inset 0px 1px 1px 1px #e3e3e3;
+}
+button {
+    border: none;
+    padding: 0;
+     color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+}
+.selectPopupContent {
+	background: white;
+}
+#wrapper {
+	width: 823px;
+    margin: 0 auto;
+}
+.group:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+.group { display: inline-block; clear: both; }
+.logogroup { display: inline-block; clear: both; height: 62px; width: 256px; background: url(./images/TELE_logo.jpg);}
+/* start commented backslash hack \*/ * html .group { height: 1%; } .group { display: block; } /* close comment
+
+/* Header
+-----------------------------------------------------------------------------*/
+#header {
+	margin: 12px 0 10px;
+	
+}
+
+/* Login */
+.login-box {
+    width: 267px;
+    height: 267px;
+    margin: 200px auto 0;
+    display: block;
+}
+.agent-top {
+    width:267px;
+    display: block;
+}
+.name { background: url(./images/name.png) top right no-repeat; width: 210px; padding-top: 32px; text-align: center; text-shadow: -1px 0px 2px #cccccc; filter: dropshadow(color=#cccccc, offx=-1, offy=0); font-size: 13px; float: right; }
+.logo { height: 58px; width: 49px; background: url(./images/logo.png) top left no-repeat; margin-right: 8px; float: left; }
+.agent-log { width: 267px; height: 60px; background: url(./images/agent_login.png) no-repeat 50% 50% #a2a4b5; margin-top: 2px; }
+
+.login { color: #fbfafa; padding: 16px; height: 108px; }
+.loginFormLine { float: right; margin-bottom: 8px; }
+.loginLabel { text-align: right; font-size: 11px; font-family: Arial, Tahoma, Verdana, sans-serif; display: inline; }
+.loginBox { margin-left: 7px; width: 172px; height: 17px; }
+.loginActionPanel { float: right; }
+.loginForgotPassword { cursor: pointer; text-decoration: underline; font-style: italic; display: inline; font-family: Arial, Tahoma, Verdana, sans-serif; font-size: 11px; }
+.loginForgotPassword:hover { text-decoration: none;  }
+.login-btn { display: inline; width: 50px; height: 50px; margin-left: 17px; cursor: pointer; }
+.login p:last-child { margin-bottom: 0; }
+
+/* General */
+#center {
+    font-weight: 600;
+}
+.fr {
+    float: right;
+}
+.fl {
+    float: left;
+}
+.blue {
+    background-color: #393e61;
+    cursor: pointer;
+}
+.red {
+    background-color: #ac1f28;
+    cursor: pointer;
+}
+.orange {
+    background-color: #c9612c;
+    cursor: pointer;
+}
+.purple {
+    background-color: #79559d;
+    cursor: pointer;
+}
+.grey {
+    background-color: #393e61; 
+}
+
+.customerNameLabel {
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 8px;
+	width: 100%;
+	color: black;
+	font-size: x-large;
+}
+
+.lastReasonLabel {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 8px;
+	width: 100%;
+	color: black;
+}
+
+.notTakingCallsLabel {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 8px;
+	width: 100%;
+	font-size: xx-large;
+	color: black;
+}
+
+/*Buttons*/
+.mid-btn {
+    width: 129px;
+    height: 129px;
+    margin-left: 10px;
+    position: relative;
+    cursor: pointer;
+}
+.big-btn {
+    width: 403px;
+    height: 129px;
+     margin-left: 7px;
+    position: relative;
+
+}
+.mid-btn span{
+    position: absolute;
+    left: 9px;
+    bottom: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: left;
+}
+.big-btn span {
+    position: absolute;
+    left: 40%;
+    top:50%;
+    font-size: 12px;
+    font-weight: 700;
+}
+.btn-wrap button:first-child {
+    margin-left: 0;
+} 
+.btn-wrap {
+    width: 100%;
+    position: relative;
+}
+.del {
+    position: absolute;
+    height: 13px;
+    width: 13px;
+    background: url(./images/btn_del.gif) top center no-repeat;    
+}
+.hld {
+    position: absolute;
+    height: 13px;
+    width: 13px;
+    background: url(./images/btn_hold.gif) 0 0 no-repeat;   
+}
+.qbtn {
+    width: 24px;
+    height: 24px;
+    background: url(./images/qbtn.png) no-repeat;
+    margin-left: 9px;
+    vertical-align: top;
+}
+button.hld:hover {
+    background-position: -13px 0;
+}
+#status-bar {
+    font-weight: 700;
+    border-top:1px dotted #b3b3b4 ;
+    border-bottom: 1px dotted #b3b3b4;
+    text-align: center;
+    margin-bottom: 9px;
+}
+#status-bar td {
+    background: url(./images/divider.gif) 99% 50% no-repeat;
+}
+#status-bar td:last-child {
+    background: none;
+}
+.item {
+	background: white;
+}
+#call-bar {
+    width: 100%;
+    color: #000000;
+    height: 116px;
+    padding-bottom: 4px;
+    text-align: center;
+    position: relative;
+    border-bottom: 1px dotted #b3b3b4;
+    margin-bottom: 7px;
+    display: block;
+}
+
+#call-bar ul li {
+    float: left;
+    margin-left: 10px;
+    height: 21px;
+    padding-top: 95px;
+}
+
+#call-bar ul li:nth-child(1) {
+    margin-left: 0px;
+    background: url(./images/green_btn.png) top center no-repeat;
+    color: #FFFFFF;
+    padding-top: 32px;
+    line-height: 15px;
+    width: 133px;
+    height: 84px;
+}
+
+#call-bar ul li:nth-child(2) {
+    background: url(./images/icon_1.png) center 4px no-repeat;
+    width: 118px;
+}
+
+#call-bar ul li:nth-child(3) {
+    background: url(./images/icon_2.png) center -101px no-repeat;
+    width: 155px;
+}
+
+#call-bar ul li:nth-child(4) {
+    background: url(./images/arrows.png) center top no-repeat;
+    width: 129px;
+}
+
+#call-bar ul li:nth-child(5) {
+    background: url(./images/icon_2.png) center 4px no-repeat;
+    width: 118px;
+}
+
+#call-bar ul li:nth-child(6) {
+    background: url(./images/icon_3.png) center 4px no-repeat;
+    width: 118px;
+}
+
+.interpreterScrollPanel { width: 408px; margin-bottom: 8px; }
+
+.int-table {
+    width: 100%;
+    color: #000000;
+}
+
+.int-table thead {
+    border: 1px solid #393e61;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 800;
+}
+.int-table tbody td {
+   /*padding: 1px 2px;*/
+   }
+.int-table-title td {
+	color: white;
+font-size: 13px;
+font-weight: 800;
+     padding: 2px 4px;
+}
+.int-table tbody  {
+    border: 1px solid #d2d2d2;
+}
+
+.tbname, .tbphone {
+    width: 188px;
+}
+
+.int-table-top td {
+   border: 1px solid #d2d2d2;
+   background: rgb(246,246,246); /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y2ZjZmNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2Y4ZjhmOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUxJSIgc3RvcC1jb2xvcj0iI2YyZjJmMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlYWVhZWEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  rgba(246,246,246,1) 0%, rgba(248,248,248,1) 50%, rgba(242,242,242,1) 51%, rgba(234,234,234,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(246,246,246,1)), color-stop(50%,rgba(248,248,248,1)), color-stop(51%,rgba(242,242,242,1)), color-stop(100%,rgba(234,234,234,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(246,246,246,1) 0%,rgba(248,248,248,1) 50%,rgba(242,242,242,1) 51%,rgba(234,234,234,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(246,246,246,1) 0%,rgba(248,248,248,1) 50%,rgba(242,242,242,1) 51%,rgba(234,234,234,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(246,246,246,1) 0%,rgba(248,248,248,1) 50%,rgba(242,242,242,1) 51%,rgba(234,234,234,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(246,246,246,1) 0%,rgba(248,248,248,1) 50%,rgba(242,242,242,1) 51%,rgba(234,234,234,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', endColorstr='#eaeaea',GradientType=0 ); /* IE6-8 */
+    font-size: 11px;
+}
+
+.form-wrap {
+    width: 408px;
+}
+.form-wrap-p {
+    text-align: right;
+    margin-bottom: 15px;
+}
+.form-wrap-input {
+    height: 18px;
+    vertical-align: baseline;
+    padding: 2px;
+    margin-left: 4px;
+}
+.form-wrap-select {
+    height: 23px;
+    margin-left: 8px;
+}
+.s1 {
+    width: 166px;
+}
+.s1l {
+    width: 120px;
+}
+.s1g {
+    width: 45px;
+	margin-left: 5px;
+	height: 24px;
+}
+.s2 {
+    width: 246px;
+}
+.s3 {
+    width: 360px;
+    height: 18px;
+	vertical-align: baseline;
+	padding: 2px;
+	margin-left: 4px;  
+}
+
+.muteIcon { cursor: pointer; }
+.hangupIcon { cursor: pointer; }
+
+.validateAccessCodeButton {
+	background-color: #C9612C;
+	cursor: pointer;
+	width: 128px; height: 23px; margin-left: 6px;
+}
+
+.connectButton {
+	cursor: pointer;
+	width: 67px; height: 23px; margin-left: 6px;
+}
+
+.manualDialButton {
+	width: 54px; height: 23px; margin-left: 5px;
+	cursor: pointer;
+}
+
+.deptValueLabel {
+	padding-top: 3px;
+}
+
+.personicon {
+	padding: 16px;
+	text-align: center;
+}
+
+.agentpanelcentered {
+	text-align: center;
+	border-bottom: 1px dotted #B3B3B4;
+	margin-bottom: 7px;
+}
+
+.actionButton {
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+.actionToolbar {
+	text-align: center;
+}
+
+.actionButton {
+	margin-top: 4px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.incall {
+	background-color: yellow;
+}
+
+.inprioritycall {
+	background-color: orange;
+}
+
+.outcall {
+	background-color: white;
+}
+
+.callerAgent {
+	background: url(./images/Agent_v2.png) center 4px no-repeat;
+	width: 118px;
+}
+
+.callerCustomer {
+	background: url(./images/Customer_v2.png) center 4px no-repeat;
+	width: 118px;
+}
+
+.callerInterpreter {
+	background: url(./images/Interpreter_v2.png) center 4px no-repeat;
+	width: 118px;
+}
+
+.callerThirdParty {
+	background: url(./images/Third_Party_v2.png) center 4px no-repeat;
+	width: 118px;
+}
+
+.callerCustomerOnHold {
+	background: url(./images/Customer_onHold_v2.png) center 4px no-repeat;
+	width: 118px;
+}
+
+.callerInterpreterOnHold {
+	background: url(./images/Interpreter_onHold_v2.png) center 4px no-repeat;
+	width: 118px;
+}
+
+.callerThirdPartyOnHold {
+	background: url(./images/Third_Party_onHold_v2.png) center 4px no-repeat;
+	width: 118px;
+}
+
+.callerOnHold {
+	background: url(./images/icon_on_hold.png) center 4px no-repeat;
+}
+
+.callerCustomerIncoming {
+	background: url(./images/green_btn.png) center 4px no-repeat;
+}
+
+.callerPriorityCustomerIncoming {
+	background: url(./images/priority_btn.png) center 4px no-repeat;
+}
+
+.callerTopLabel {
+	text-align: center;
+	vertical-align: middle;
+	font-size: x-small; 
+}
+
+.callerBottomLabel {
+	text-align: center;
+	vertical-align: middle;
+	font-size: x-small; 
+}
+
+.callerOnHoldLabel {
+	text-align: center;
+	font-size: small;
+	font-weight: bold;
+	color: red;
+}
+
+.agentQuestion {
+	font-size: xx-small;
+}
+
+.customerNameLabel { text-align: center;
+	font-weight: bold; }
+	
+.searchDiv { width: 100%; }
+
+.searchInterpreterHoizontalTable {
+	margin-bottom: 30px;
+}
+
+.searchInterpreterLabel {
+	white-space: nowrap;
+	overflow: hidden;
+	margin-top: 2px;
+}
+
+.searchInterpreterTextBox { 
+	width: 98%;
+    height: 18px;
+	vertical-align: baseline;
+	padding: 2px;
+	margin-left: 4px;  
+}
+
+.searchInterpreterClearButton { 
+	background-color: #330033;
+    cursor: pointer;
+    width: 128px;
+    height: 23px;
+    margin-left: 6px;
+}
+	
+.gwt-PopupPanelGlass {
+  background-color: #000;
+  opacity: 0.3;
+  filter: alpha(opacity=30);
+}
+
+.gwt-Button {
+	background-color: green;
+	padding: 4px;
+	margin: 4px;
+}
+
+.gwt-TextBox {
+	width: 100px; 
+	height: 20px;
+	padding: 2px;
+	margin: 4px;
+}
+
+.gwt-DialogBox .Caption {
+  background: #F1F1F1;
+  padding: 4px 8px 4px 4px;
+  cursor: default;
+  font-family: Arial Unicode MS, Arial, sans-serif;
+  font-weight: bold;
+  border-bottom: 1px solid #bbbbbb;
+  border-top: 1px solid #D2D2D2;
+}
+.gwt-DialogBox .dialogContent {
+}
+.gwt-DialogBox .dialogMiddleCenter {
+  padding: 3px;
+  background: white;
+}
+.gwt-DialogBox .dialogBottomCenter {
+  background: url(images/hborder.png) repeat-x 0px -2945px;
+}
+.gwt-DialogBox .dialogMiddleLeft {
+  background: url(images/vborder.png) repeat-y -31px 0px;
+}
+.gwt-DialogBox .dialogMiddleRight {
+  background: url(images/vborder.png) repeat-y -32px 0px;
+}
+.gwt-DialogBox .dialogTopLeftInner {
+  width: 10px;
+  height: 8px;
+  zoom: 1;
+}
+.gwt-DialogBox .dialogTopRightInner {
+  width: 12px;
+  zoom: 1;
+}
+.gwt-DialogBox .dialogBottomLeftInner {
+  width: 10px;
+  height: 12px;
+  zoom: 1;
+}
+.gwt-DialogBox .dialogBottomRightInner {
+  width: 12px;
+  height: 12px;
+  zoom: 1;
+}
+.gwt-DialogBox .dialogTopLeft {
+  background: url(images/circles.png) no-repeat -20px 0px;
+}
+.gwt-DialogBox .dialogTopRight {
+  background: url(images/circles.png) no-repeat -28px 0px;
+}
+.gwt-DialogBox .dialogBottomLeft {
+  background: url(images/circles.png) no-repeat 0px -36px;
+}
+.gwt-DialogBox .dialogBottomRight {
+  background: url(images/circles.png) no-repeat -8px -36px;
+}
+* html .gwt-DialogBox .dialogTopLeftInner {
+  width: 10px;
+  overflow: hidden;
+}
+* html .gwt-DialogBox .dialogTopRightInner {
+  width: 12px;
+  overflow: hidden;
+}
+* html .gwt-DialogBox .dialogBottomLeftInner {
+  width: 10px;
+  height: 12px;
+  overflow: hidden;
+}
+* html .gwt-DialogBox .dialogBottomRightInner {
+  width: 12px;
+  height: 12px;
+  overflow: hidden;
+}

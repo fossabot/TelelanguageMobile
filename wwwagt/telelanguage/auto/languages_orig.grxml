@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?> 
+<grammar xmlns="http://www.w3.org/2001/06/grammar" xml:lang="en-US" root="r2">
+  <rule id="r2" scope="public">
+     <one-of>
+        <item> Arabic <tag> <![CDATA[  <language "Arabic"> ]]>  </tag> </item>
+        <item> Cambodian <tag> <![CDATA[  <language "Cambodian"> ]]>  </tag> </item>
+        <item> Creole <tag> <![CDATA[  <language "French Creole"> ]]>  </tag> </item>
+        <item> Chinese <tag> <![CDATA[  <language "Chinese"> ]]>  </tag> </item>
+        <item> Farsi <tag> <![CDATA[  <language "Farsi (Persian)"> ]]>  </tag> </item>
+        <item> French <tag> <![CDATA[  <language "French"> ]]>  </tag> </item>
+        <item> Korean <tag> <![CDATA[  <language "Korean"> ]]>  </tag> </item>
+        <item> German <tag> <![CDATA[  <language "German"> ]]>  </tag> </item>
+        <item> Italian <tag> <![CDATA[  <language "Italian"> ]]>  </tag> </item>
+        <item> Japanese <tag> <![CDATA[  <language "Japanese"> ]]>  </tag> </item>
+        <item> Russian <tag> <![CDATA[  <language "Russian"> ]]>  </tag> </item>
+        <item> Spanish <tag> <![CDATA[  <language "Spanish"> ]]>  </tag> </item>
+        <item> Swahili <tag> <![CDATA[  <language "Swahili"> ]]>  </tag> </item>
+        <item> Ukranian <tag> <![CDATA[  <language "Ukranian"> ]]>  </tag> </item>
+     </one-of>
+  </rule>
+</grammar>

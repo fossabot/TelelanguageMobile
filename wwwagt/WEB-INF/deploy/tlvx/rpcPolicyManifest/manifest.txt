@@ -1,0 +1,3 @@
+# Module tlvx
+# RPC service class, partial path of RPC policy file
+com.telelanguage.tlvx.client.AgentService, 46035C3FC498E2099514FB578488578D.gwt.rpc
